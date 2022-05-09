@@ -4,6 +4,8 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
+<link rel="stylesheet" href="style/dessin.css">
+<script type="text/javascript" src="script/dessin.js"></script>
 <title>Dessin</title>
 </head>
 <body>
