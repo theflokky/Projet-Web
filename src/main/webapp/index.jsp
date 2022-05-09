@@ -13,7 +13,7 @@
   
     <meta charset="utf-8">
     <title>Notre site</title>
-    <link rel="stylesheet" type="text/css" href="css/main.css"> <% //a rajouteer %>
+    <link rel="stylesheet" type="text/css" href="style/projet.css">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@900&display=swap" rel="stylesheet">
   </head>
 <body>
@@ -48,7 +48,7 @@
       
       
       <c:import url="footer.html" />
-      <script src="js/script.js"></script> <% //a rajouter %>
+      <script src="script/projet.js"></script>
       
   </body>
   
