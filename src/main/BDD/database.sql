@@ -34,18 +34,17 @@ CREATE TABLE Creneau(
        , PRIMARY KEY (num)
 )ENGINE=InnoDB;
 
-// à faire
+
 CREATE TABLE Cours(
        num INT AUTO_INCREMENT
-     , typeCours ENUM('EM','TD','TP','EX')
-     , license INT 
-     , matiere VARCHAR(30) 
-     , classe INT 
-     , groupe INT DEFAULT NULL
-     , FOREIGN KEY (license) REFERENCES LMD(num)
-     , FOREIGN KEY (matiere) REFERENCES Matiere(nom) 
-     , FOREIGN KEY (prof) REFERENCES Prof(num)
-     , FOREIGN KEY (classe) REFERENCES Classe(num)
-     , FOREIGN KEY (groupe) REFERENCES GroupeTravail(num)
+     , salle VARCHAR(30)
      , PRIMARY KEY (num)
+)ENGINE=InnoDB;
+
+
+CREATE TABLE Planning(
+       utilisateur INT
+     , creneau INT
+     , FOREIGN KEY (utilisateur) REFERENCES Utilisateur(num)
+     , FOREIGN KEY (creneau) REFERENCES Creneau(num)    
 )ENGINE=InnoDB;
