@@ -8,5 +8,9 @@
 </head>
 <body>
 <h1>DESSIN</h1>
+<button onclick=""> Nouvelle partie </button>
+
+<!-- affichage -->
+
 </body>
 </html>
