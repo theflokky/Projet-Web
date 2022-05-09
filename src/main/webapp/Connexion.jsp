@@ -12,12 +12,12 @@
 </head>
 
 <body>
-<c:import url="../header.html" />
+<c:import url="header.html" />
 
 <div class="login-box">
     <h2>Connexion</h2>
     
-    <form action ="http://localhost:8080/ComptAmiWeb/index.jsp" id ="form" method="post" name="connexion">
+    <form action ="http://localhost:8080/projet_web2/index.jsp" id ="form" method="post" name="connexion">
    	<div class="user-box">
     <input type="text" name="pseudo" id="pseudo" pattern="\w*" title="Les caractères spéciaux sauf '_' ne sont pas acceptés" value="" required><label for="pseudo">PSEUDO</label></div>
   
@@ -28,13 +28,13 @@
 	
     </form>
     
-    <a class="alt_co" href="http://localhost:8080/ComptAmiWeb/account/Inscription.jsp">Créer un compte</a>
+    <a class="alt_co" href="http://localhost:8080/projet_web2/Inscription.jsp">Créer un compte</a>
     </div>
     
     <% System.out.println(request.getParameter("id_pseudo")); %>
     
-    <c:import url="../footer.html" />
+    <c:import url="footer.html" />
 </body>
 
-<script type="text/javascript" src="script/projet.js"></script>
+<script type="text/javascript" src="script/projet.js"></script> 
 </html>
