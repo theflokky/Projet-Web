@@ -2,25 +2,16 @@ package projet_web2;
 
 public class Cours {
 	private String nom_UE;
-	private int classe;
 	private int salle;
-	private String batiment;
-	private String type_cour;
-	private int license;
-	private String groupe;
+	
 	public Cours(String nom_UE) {
 		super();
 		this.nom_UE = nom_UE;
 	}
-	public Cours(String nom_UE, int classe, int salle, String batiment, String type_cour, int license, String groupe) {
+	public Cours(String nom_UE, int salle) {
 		super();
 		this.nom_UE = nom_UE;
-		this.classe = classe;
 		this.setSalle(salle);
-		this.batiment = batiment;
-		this.type_cour = type_cour;
-		this.license = license;
-		this.groupe = groupe;
 	}
 	public String getNom_UE() {
 		return nom_UE;
@@ -28,41 +19,10 @@ public class Cours {
 	public void setNom_UE(String nom_UE) {
 		this.nom_UE = nom_UE;
 	}
-	public int getClasse() {
-		return classe;
-	}
-	public void setClasse(int classe) {
-		this.classe = classe;
-	}
 	public int getSalle() {
 		return salle;
 	}
 	public void setSalle(int salle) {
 		this.salle = salle;
 	}
-	public String getBatiment() {
-		return batiment;
-	}
-	public void setBatiment(String batiment) {
-		this.batiment = batiment;
-	}
-	public String getType_cour() {
-		return type_cour;
-	}
-	public void setType_cour(String type_cour) {
-		this.type_cour = type_cour;
-	}
-	public int getLicense() {
-		return license;
-	}
-	public void setLicense(int license) {
-		this.license = license;
-	}
-	public String getGroupe() {
-		return groupe;
-	}
-	public void setGroupe(String groupe) {
-		this.groupe = groupe;
-	}
-	
 }
