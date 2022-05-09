@@ -17,5 +17,6 @@
   	<url-pattern>*.jpg</url-pattern>
   	<url-pattern>*.png</url-pattern>
   </servlet-mapping>
+  
   <display-name>ProjetDW2022</display-name>
 </web-app>
