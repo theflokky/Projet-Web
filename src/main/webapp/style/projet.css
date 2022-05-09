@@ -197,9 +197,3 @@ textarea:focus {
     outline-width: 0;
 }
 
-zone_dessin{
-	height: 600px;
-	width: 90%;
-	margin:10px;
-	border: 1px solid black;
-}
