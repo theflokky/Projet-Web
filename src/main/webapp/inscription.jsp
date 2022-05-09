@@ -7,8 +7,7 @@
 <head>
 <meta charset="UTF-8">
 <title>Inscription</title>
-<link rel="stylesheet" type="text/css" href="../css/main.css">
-    <link rel="stylesheet" type="text/css" href="../css/account.css">
+<link rel="stylesheet" type="text/css" href="style/projet.css">
 </head>
 <body>
 
@@ -48,6 +47,6 @@
        
   <c:import url="footer.html" />
 </body>
-<script type="text/javascript" src="../js/script.js"></script>
+<script type="text/javascript" src="script/projet.js"></script>
 
 </html>
