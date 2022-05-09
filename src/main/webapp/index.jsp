@@ -18,7 +18,7 @@
   </head>
 <body>
 
-	<%	String Id_user = (String) session.getAttribute("Id_user"); %>
+	<% String Id_user = (String) session.getAttribute("Id_user"); %>
 	<% ServletContext context = request.getSession().getServletContext(); %>
 	
 	<c:if test="${not empty param.id_pseudo or param.id_pseudo > -1 }">
