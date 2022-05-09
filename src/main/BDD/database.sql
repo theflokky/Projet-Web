@@ -1,9 +1,10 @@
 set foreign_key_checks=0 ;
 
-CREATE TABLE Utilisateur(
+CREATE TABLE Personne(
          num INT AUTO_INCREMENT
-       , Pseudo VARCHAR(50) NOT NULL
-       , Email  VARCHAR(255) NOT NULL
-       , password VARCHAR(40) NOT NULL -- hash only
+       , Pseudo VARCHAR(30) NOT NULL
+       , Email  VARCHAR(300) NOT NULL
+       , password VARCHAR(30) NOT NULL
+       , titre VARCHAR(30) NOT NULL -- Utilisateur/Admin
        , PRIMARY KEY (num)
 )ENGINE=InnoDB;
