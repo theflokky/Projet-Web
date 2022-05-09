@@ -8,9 +8,9 @@
 </head>
 <body>
 <h1>DESSIN</h1>
-<button onclick=""> Nouvelle partie </button>
+<button onclick="start();"> Nouvelle partie </button>
 
-<!-- affichage -->
+<div id="zone_dessin"></div>
 
 </body>
 </html>
