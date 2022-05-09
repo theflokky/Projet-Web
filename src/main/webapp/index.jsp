@@ -33,6 +33,7 @@
       <div class="main_content">
         <section class="news">
           <h2>BIENVENUE</h2>
+		<p style="float:right; padding-right: 60px"><a href="Connexion.jsp">Connecter</a></p>
           <p>Bienvenu sur le site : Le site vous permet de .... !</p>
           <p>Explication</p>
           <p>Une messagerie  est également intégrée</p>
