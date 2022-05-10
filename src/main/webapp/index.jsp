@@ -5,8 +5,6 @@
    <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>  
    <%@ taglib uri="http://java.sun.com/jsp/jstl/sql" prefix="sql"%>  
 
-<jsp:useBean id="Connexion" class="projet_web2.Connexion" scope="application"></jsp:useBean>
-
 <!DOCTYPE html>
 <html lang="fr">
   <head>
