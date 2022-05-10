@@ -1,13 +1,15 @@
 package client_lourd.Controleurs;
 
+import client_lourd.Vues.Fenetre;
 import client_lourd.Vues.Inscription;
-import client_lourd.Fenetre;
 
 import  java.awt.event.*;
 import  javax.swing.*;
 
 public class InscriptionControl implements ActionListener{
     private JPanel vue;
+    public static String pseudo, mail;
+    public static String mdp;
 
     //Constructeur
     public InscriptionControl(JPanel vue){
@@ -19,6 +21,14 @@ public class InscriptionControl implements ActionListener{
         //Si clique sur Valider
         if(e.getSource() == Inscription.btn_valide){
             System.out.println("VALIDER");
+            //RENTRER DANS LA BDD A FAIRE
+            pseudo = Inscription.champ_pseudo.getText();
+            mdp = String.valueOf(Inscription.champ_mdp.getPassword());
+            mail = Inscription.champ_mail.getText();
+
+            System.out.println("Pseudo : " + pseudo);
+            System.out.println("Email : " + mail);
+            System.out.println("Mot de Passe : " + mdp);
         }
 
         //Si clique sur Retour

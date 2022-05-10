@@ -1,4 +1,4 @@
-package client_lourd;
+package client_lourd.Vues;
 
 import javax.swing.*;
 import java.awt.*;
@@ -15,8 +15,12 @@ public class Fenetre {
 
 
     public Fenetre(){
+		Dimension tailleMoniteur = Toolkit.getDefaultToolkit().getScreenSize();
+		//LARGEUR_FENETRE = tailleMoniteur.width * 2/3;
+		//HAUTEUR_FENETRE = tailleMoniteur.height * 2/3;
+
     	frame = new JFrame("Fenetre");
-		frame.setSize(1280, 720);
+		frame.setSize(LARGEUR_FENETRE, HAUTEUR_FENETRE);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.add(createMainPanel());
 
@@ -41,6 +45,10 @@ public class Fenetre {
 
 		if(num_page == 3){
 			Inscription.afficheInscription(cartes);
+		}
+
+		if(num_page == 4){
+			PlanningUser.affichePlanningUser(cartes);
 		}
 
         return cartes;

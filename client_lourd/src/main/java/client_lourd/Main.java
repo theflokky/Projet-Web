@@ -1,6 +1,9 @@
 package client_lourd;
 
 import javax.swing.*;
+
+import client_lourd.Vues.Fenetre;
+
 import java.awt.*;
 
 //Classe Main
