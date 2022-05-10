@@ -1,18 +1,19 @@
-
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
    <%@page import="projet_web2.Connexion"%> 
    <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>  
    <%@ taglib uri="http://java.sun.com/jsp/jstl/sql" prefix="sql"%>  
-
+   
+   <jsp:include page="header.jsp"></jsp:include>
+   
+   
 <!DOCTYPE html>
 <html lang="fr">
   <head>
-  
     <meta charset="utf-8">
     <title>Notre site</title>
-    <link rel="stylesheet" type="text/css" href="style/projet.css">
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="script/projet.css">
+    <script type="text/javascript" src="style/projet.js"></script>
   </head>
 <body>
 
@@ -26,28 +27,14 @@
 	  	
   	</c:if>
   	
-  	<c:import url="header.html" />
-	<div class="main">
-      <div class="main_content">
-        <section class="news">
-          <h2>BIENVENUE</h2>
+	<h2>BIENVENUE</h2>
 		<p style="float:right; padding-right: 60px"><a href="Connexion.jsp">Connecter</a></p>
           <p>Bienvenu sur le site : Le site vous permet de .... !</p>
           <p>Explication</p>
           <p>Une messagerie  est également intégrée</p>
           <p> ... !</p> 
-          
-		</section>
-		
-        </div>
-       
-        
-      </div>
-      
-      
-      
-      <c:import url="footer.html" />
-      <script src="script/projet.js"></script>
+
+      <jsp:include page="/footer.jsp" />
       
   </body>
   
