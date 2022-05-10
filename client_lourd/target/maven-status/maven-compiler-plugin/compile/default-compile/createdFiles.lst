@@ -1,6 +1,8 @@
 client_lourd/Controleurs/ConnexionControl.class
+client_lourd/Controleurs/InscriptionControl.class
+client_lourd/Vues/Inscription.class
+client_lourd/Vues/Accueil.class
 client_lourd/Fenetre.class
 client_lourd/Vues/Connexion.class
 client_lourd/Controleurs/AccueilControl.class
 client_lourd/Main.class
-client_lourd/Vues/Accueil.class

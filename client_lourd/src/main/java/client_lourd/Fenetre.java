@@ -1,43 +1,49 @@
 package client_lourd;
 
-//Bibliothèques
 import javax.swing.*;
+import java.awt.*;
 
 import client_lourd.Vues.*;
 
-import java.awt.*;
-import java.util.*;
-
-//Fenetre
-public class Fenetre extends JFrame{	
+public class Fenetre {
 	public static Integer LARGEUR_FENETRE = 1280;
 	public static Integer HAUTEUR_FENETRE = 720;
-	public static JPanel accueil;
-	public static JPanel connexion;
-	public static CardLayout carte;
-	public static JPanel cartes;
+	public static JPanel cartes = new JPanel();
+	public static JFrame frame;
 
-    //Constructeur de la Fenetre
-	public Fenetre() {
+	public static Integer num_page = 1;
 
-		accueil = new Accueil();
-		connexion = new Connexion();
 
-		this.setSize(LARGEUR_FENETRE, HAUTEUR_FENETRE);
-		this.setTitle("Emploi du Temps");
+    public Fenetre(){
+    	frame = new JFrame("Fenetre");
+		frame.setSize(1280, 720);
+        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        frame.add(createMainPanel());
 
-		carte = new CardLayout();
-		cartes = new JPanel(carte);
+        frame.setResizable(false);
+        frame.setVisible(true);
+    }
 
-		cartes.add(accueil);
-		cartes.add(connexion);
+    public static JPanel createMainPanel() {
 		
+        cartes.setLayout(null);
+		cartes.setBackground(Color.BLACK);
 
-		add(cartes);
+		//Ecran d'accueil
+        if(num_page == 1){
+			Accueil.afficheAccueil(cartes);
+		}
 
-		this.setBackground(Color.BLACK);
-		this.setDefaultCloseOperation(EXIT_ON_CLOSE);
-        this.setResizable(false);
-		this.setVisible(true);
-	}
+		//Ecran de Connexion
+		if(num_page == 2){
+			Connexion.afficheConnexion(cartes);
+		}
+
+		if(num_page == 3){
+			Inscription.afficheInscription(cartes);
+		}
+
+        return cartes;
+    }
+
 }

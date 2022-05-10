@@ -3,23 +3,18 @@ package client_lourd.Vues;
 import client_lourd.Controleurs.AccueilControl;
 
 import javax.swing.*;
+import javax.swing.border.Border;
 import java.awt.*;
+import java.awt.Font;
 import java.util.*;
 
-public class Accueil extends JPanel{
-    //Declaration des controleurs et modeles
-    private static boolean visible = true;
+public class Accueil{
     public static JButton btn_connexion, btn_inscription;
-    public static JLabel titre_accueil;
-    
+    public static JLabel texte_accueil;
 
-    //Constructeur
-    public Accueil(){
+    public static void afficheAccueil(JPanel cartes){
+        AccueilControl controleur = new AccueilControl(cartes);
 
-        this.setLayout(null);
-
-        AccueilControl controleur = new AccueilControl(this);
-        
         btn_inscription = new JButton("Inscription");
         btn_inscription.setBounds(540, 400, 200, 50);
         btn_inscription.addActionListener(controleur);
@@ -28,24 +23,15 @@ public class Accueil extends JPanel{
         btn_connexion.setBounds(540, 300, 200, 50);
         btn_connexion.addActionListener(controleur);
 
+        texte_accueil = new JLabel();
+        Font font = new Font("Arial",Font.BOLD,40);
+        texte_accueil.setFont(font);
+        texte_accueil.setBounds(440, 100, 600, 50);
+        texte_accueil.setText("EMPLOI DU TEMPS");
+        texte_accueil.setForeground(Color.RED);
 
-
-
-        
-        
-        this.add(btn_inscription);
-        this.add(btn_connexion);
-        
-        this.setVisible(visible);
-
-    }
-    
-    //Fonction du panneau
-    public void paint(Graphics g){
-        //On dessine le logo en haut de l'accueil
-        //g.setColor(Color.GRAY);
-        //g.fillRect(340, 100, 600, 100);
-
-
+        cartes.add(btn_connexion);
+        cartes.add(btn_inscription);
+        cartes.add(texte_accueil);
     }
 }
