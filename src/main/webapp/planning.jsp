@@ -18,8 +18,8 @@
     <script type="text/javascript" src="script/projet.js"></script>
 </head>
 <body>
-	<button onclick="retourne()"><img src="img/retourne.jpg" /></button>
-	<form style="float:right" action="Mess" method="post"><input type="submit" name="messagerie" value="messagerie" /></form>
+	<button onclick="window.history.back();"><img src="img/retourne.jpg" /></button>
+	<form style="float:right" action="Chat" method="post"><input type="submit" name="messagerie" value="messagerie" /></form>
 	<h3>BIENVENUE</h3>	
 
 	<% Planning ent = (Planning) session.getAttribute("edt"); %>
@@ -87,7 +87,6 @@
 		</c:forEach>
 	</table>
 -->
-	<a style="float: right; text-decoration: none; border: 1px solid black;" href="form_creneau.html">Ajouter Créneau</a>
 </body>
 </body>
 </html>
