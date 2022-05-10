@@ -27,7 +27,7 @@
   	</c:if>
   	
 	<h1>BIENVENUE</h1>
-	<p style="float:right; padding-right: 60px"><a href="Connexion.jsp">Connecter</a></p>
+	<p style="float:right; padding-right: 60px; "><a href="Connexion.jsp" style="text-decoration:none;">Connecter</a></p>
 	<p>Bienvenu sur le site : Le site vous permet de .... !</p>
 	<p>Explication</p>
 	<p>Une messagerie  est également intégrée</p>
