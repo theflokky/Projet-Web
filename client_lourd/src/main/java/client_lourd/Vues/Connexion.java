@@ -25,7 +25,12 @@ public class Connexion extends JPanel{
 
     //Fonction Paint
     public void paint(Graphics g){
+        g.setColor(Color.BLACK);
+        g.fillRect(0, 0, 1280, 720);
+        
         g.setColor(Color.RED);
         g.fillRect(340, 100, 600, 100);
+
+        
     }
 }

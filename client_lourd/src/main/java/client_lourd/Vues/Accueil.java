@@ -8,36 +8,44 @@ import java.util.*;
 
 public class Accueil extends JPanel{
     //Declaration des controleurs et modeles
-    private AccueilControl controleur;
     private static boolean visible = true;
+    public static JButton btn_connexion, btn_inscription;
+    public static JLabel titre_accueil;
     
 
     //Constructeur
     public Accueil(){
-        //On instancie le controleur
-        controleur = new AccueilControl(this);
 
-        //Ajout du bouton de Connexion
-        JButton btn_connexion = new JButton("Connexion");
-        btn_connexion.setBounds(540, 300 ,200, 50);
-        btn_connexion.addActionListener(controleur);
+        this.setLayout(null);
 
-        //Ajout du bouton de Inscription
-        JButton btn_inscription = new JButton("Inscription");
-        btn_inscription.setBounds(540, 400 ,200, 50);
+        AccueilControl controleur = new AccueilControl(this);
+        
+        btn_inscription = new JButton("Inscription");
+        btn_inscription.setBounds(540, 400, 200, 50);
         btn_inscription.addActionListener(controleur);
 
-        setLayout(null);
-        this.add(btn_connexion);
+        btn_connexion = new JButton("Connexion");
+        btn_connexion.setBounds(540, 300, 200, 50);
+        btn_connexion.addActionListener(controleur);
+
+
+
+
+        
+        
         this.add(btn_inscription);
-        setVisible(visible);
+        this.add(btn_connexion);
+        
+        this.setVisible(visible);
 
     }
     
     //Fonction du panneau
     public void paint(Graphics g){
         //On dessine le logo en haut de l'accueil
-        g.setColor(Color.GRAY);
-        g.fillRect(340, 100, 600, 100);
+        //g.setColor(Color.GRAY);
+        //g.fillRect(340, 100, 600, 100);
+
+
     }
 }
