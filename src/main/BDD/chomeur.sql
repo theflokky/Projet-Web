@@ -34,6 +34,7 @@ CREATE TABLE IF NOT EXISTS `cours` (
   `debut` int(11) NOT NULL,
   `fin` int(11) NOT NULL,
   `professeur` varchar(25) NOT NULL,
+  `jour` int(8),
   PRIMARY KEY (`id_cours`)
 ) ENGINE=MyISAM AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
 
@@ -41,9 +42,9 @@ CREATE TABLE IF NOT EXISTS `cours` (
 -- Déchargement des données de la table `cours`
 --
 
-INSERT INTO `cours` (`id_cours`, `nom`, `debut`, `fin`, `professeur`) VALUES
-(1, 'SAI', 14, 16, 'Bernard Marc'),
-(2, 'TALN', 8, 10, 'Jacquenet');
+INSERT INTO `cours` (`id_cours`, `nom`, `debut`, `fin`, `professeur`, `jour`) VALUES
+(1, 'SAI', 14, 16, 'Bernard Marc', 0),
+(2, 'TALN', 8, 10, 'Jacquenet', 0);
 
 -- --------------------------------------------------------
 
