@@ -1,6 +1,7 @@
 package client_lourd.Vues;
 
 import client_lourd.Controleurs.PlanningUserControl;
+import client_lourd.Modeles.RecupData;
 
 import java.awt.*;
 import java.util.*;
@@ -11,10 +12,10 @@ public class PlanningUser{
     public static JButton btn_deco;
     public static String pseudo;
     public static JButton[][] planning = new JButton[7][10];
+    public static PlanningUserControl controleur = new PlanningUserControl();
 
     //Fonction d'affichage de la page
     public static void affichePlanningUser(JPanel cartes){
-        PlanningUserControl controleur = new PlanningUserControl();
 
         Font font1 = new Font("Arial",Font.PLAIN,13);
 
@@ -41,6 +42,7 @@ public class PlanningUser{
         btn_deco.setMargin(i);
 
         //Dessin du Planning
+        System.out.println("NIQUE SA MERE LA SIENNE");
         dessinePlanning(cartes);
 
         cartes.add(btn_deco);
@@ -51,21 +53,36 @@ public class PlanningUser{
     }
 
     private static void dessinePlanning(JPanel cartes){
-        PlanningUserControl controleur = new PlanningUserControl();
         Integer i, j;
         Integer x = 95;
         Integer y = 30;
         Integer h1 = 8;
         Integer h2 = 9;
 
+        PlanningUserControl.initPlanning();
+
         for(i= 0; i < 7; i++){
             for(j=0; j<10; j++){
                 JButton cellule = new JButton();
-                planning[i][j]=cellule;
+
                 cellule.setBounds(x, y, 150, 50);
-                cellule.setBackground(Color.DARK_GRAY);
-                cellule.setForeground(Color.LIGHT_GRAY);
                 cellule.addActionListener(controleur);
+
+                if(PlanningUser.planning[i][j] != null){
+                    Integer id = PlanningUserControl.rechercheIdCours(i, j, j);
+                    System.out.println(id);
+                    cellule.setText("<HTML><BODY><CENTER>"+ RecupData.table_cours[0][id] + "<BR>" + RecupData.table_cours[1][id]+ "</CENTER></BODY></HTML>");
+                    cellule.setBackground(Color.RED);
+                    cellule.setForeground(Color.LIGHT_GRAY);
+                    
+                }
+                else{
+                    System.out.println("PD");
+                    cellule.setBackground(Color.DARK_GRAY);
+                    planning[i][j]=cellule;
+                }
+                
+                
                 cartes.add(cellule);
                 
 

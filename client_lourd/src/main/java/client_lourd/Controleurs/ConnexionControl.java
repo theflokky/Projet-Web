@@ -2,6 +2,7 @@ package client_lourd.Controleurs;
 
 import client_lourd.Vues.Connexion;
 import client_lourd.Vues.Fenetre;
+import client_lourd.Modeles.RecupData;
 
 import  java.awt.event.*;
 import  javax.swing.*;
@@ -12,22 +13,6 @@ public class ConnexionControl implements ActionListener{
     public static String mdp;
     private boolean utilisateur_existe = false;
     public boolean admin = false;
-
-    private static String[][] init_table_user(){
-        String[][] table = new String[3][1000];
-
-
-        for(int i= 0; i < 3; i++){
-            for(int j=0; j<1000; j++){
-                table[i][j] = new String("");
-            }
-        }
-        return table;
-    }
-
-
-    public static String[][] table_user = init_table_user();
-
 
     //Constructeur
     public ConnexionControl(JPanel vue){
@@ -42,8 +27,9 @@ public class ConnexionControl implements ActionListener{
             //Verification dans la BDD A FAIRE
             pseudo = Connexion.champ_pseudo.getText();
             client_lourd.Vues.PlanningUser.pseudo = pseudo;
+            client_lourd.Vues.PlanningAdmin.pseudo = pseudo;
             mdp = String.valueOf(Connexion.champ_mdp.getPassword());
-            
+
             if(pseudo.isEmpty() || mdp.isEmpty()){}
             else{
                 System.out.println("Pseudo : " + pseudo);
@@ -51,10 +37,13 @@ public class ConnexionControl implements ActionListener{
 
                 //VERIFIER BDD
                 for(int i = 0; i < 1000; i++){
-                    if(table_user[0][i].equals(pseudo) && table_user[1][i].equals(mdp)){
+                    if(RecupData.table_user[0][i].equals(pseudo) && RecupData.table_user[1][i].equals(mdp)){
                         utilisateur_existe = true;
                     }
-                    if(table_user[2][i].equals("Utilisateur")){
+                    if(RecupData.table_admin[i] == 1){
+                        admin = true;
+                    }
+                    else if(RecupData.table_admin[i] == 0){
                         admin = false;
                     }
                 }

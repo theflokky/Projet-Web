@@ -1,7 +1,8 @@
 package client_lourd.Vues;
 
 import client_lourd.Controleurs.PlanningAdminControl;
-
+import client_lourd.Modeles.RecupData;
+import client_lourd.Controleurs.PlanningUserControl;
 import java.awt.*;
 import java.util.*;
 import javax.swing.*;
@@ -11,6 +12,7 @@ public class PlanningAdmin{
     public static JButton btn_deco;
     public static String pseudo;
     public static boolean supprimer = false;
+    public static PlanningAdminControl controleur = new PlanningAdminControl();
 
     //Fonction d'affichage de la page
     public static void affichePlanningAdmin(JPanel cartes){
@@ -55,21 +57,36 @@ public class PlanningAdmin{
     }
 
     private static void dessinePlanning(JPanel cartes){
-        PlanningAdminControl controleur = new PlanningAdminControl();
         Integer i, j;
         Integer x = 95;
         Integer y = 30;
         Integer h1 = 8;
         Integer h2 = 9;
 
+        PlanningUserControl.initPlanning();
+
         for(i= 0; i < 7; i++){
             for(j=0; j<10; j++){
                 JButton cellule = new JButton();
-                PlanningUser.planning[i][j]=cellule;
+
                 cellule.setBounds(x, y, 150, 50);
-                cellule.setBackground(Color.DARK_GRAY);
-                cellule.setForeground(Color.LIGHT_GRAY);
                 cellule.addActionListener(controleur);
+
+                if(PlanningUser.planning[i][j] != null){
+                    Integer id = PlanningUserControl.rechercheIdCours(i, j, j);
+                    System.out.println(id);
+                    cellule.setText("<HTML><BODY><CENTER>"+ RecupData.table_cours[0][id] + "<BR>" + RecupData.table_cours[1][id]+ "</CENTER></BODY></HTML>");
+                    cellule.setBackground(Color.RED);
+                    cellule.setForeground(Color.LIGHT_GRAY);
+                    
+                }
+                else{
+                    System.out.println("PD");
+                    cellule.setBackground(Color.DARK_GRAY);
+                    PlanningUser.planning[i][j]=cellule;
+                }
+                
+                
                 cartes.add(cellule);
                 
 

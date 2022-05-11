@@ -22,8 +22,9 @@ public class Fenetre {
     	frame = new JFrame("Fenetre");
 		frame.setSize(LARGEUR_FENETRE, HAUTEUR_FENETRE);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		System.out.println("NIQUE SA MERE GROSSE OTRZAJFAZEzaeuih");
         frame.add(createMainPanel());
-
+		System.out.println("NIQUE SA MERE GROSSE OTRZAJFAZEzaeuih");
         frame.setResizable(false);
         frame.setVisible(true);
     }
