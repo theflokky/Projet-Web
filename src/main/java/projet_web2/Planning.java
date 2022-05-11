@@ -13,7 +13,7 @@ public class Planning {
 	public Utilisateur getU() {
 		return u;
 	}
-	public void setU(User user) {
+	public void setU(Utilisateur user) {
 		this.u = user;
 	}
 	public ArrayList<Creneau> getEdt() {
