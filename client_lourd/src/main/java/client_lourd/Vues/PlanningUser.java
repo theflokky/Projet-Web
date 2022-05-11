@@ -8,9 +8,9 @@ import javax.swing.*;
 
 public class PlanningUser{
     //VARIABLES
-    public static JButton btn_deco, btn_ajout;
+    public static JButton btn_deco;
     public static String pseudo;
-    public static JButton[][] planning = new JButton[7][24];
+    public static JButton[][] planning = new JButton[7][10];
 
     //Fonction d'affichage de la page
     public static void affichePlanningUser(JPanel cartes){
@@ -29,7 +29,7 @@ public class PlanningUser{
         texte_pseudo1.setText(pseudo);
         texte_pseudo1.setFont(font1);
         texte_pseudo1.setForeground(Color.RED);
-
+        
 
 
         btn_deco = new JButton("Deconnexion");

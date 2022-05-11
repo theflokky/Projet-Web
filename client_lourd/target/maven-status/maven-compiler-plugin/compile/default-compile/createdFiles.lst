@@ -7,6 +7,7 @@ client_lourd/Controleurs/AccueilControl.class
 client_lourd/Controleurs/InscriptionControl.class
 client_lourd/Vues/Inscription.class
 client_lourd/Controleurs/PopUpAjoutControl.class
+client_lourd/Modeles/ConnexionBDD.class
 client_lourd/Vues/Accueil.class
 client_lourd/Vues/PopUpAjout.class
 client_lourd/Vues/PlanningAdmin.class

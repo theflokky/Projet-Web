@@ -51,6 +51,10 @@ public class Fenetre {
 			PlanningUser.affichePlanningUser(cartes);
 		}
 
+		if(num_page == 5){
+			PlanningAdmin.affichePlanningAdmin(cartes);
+		}
+
         return cartes;
     }
 

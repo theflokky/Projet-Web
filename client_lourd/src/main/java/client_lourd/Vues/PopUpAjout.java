@@ -9,14 +9,16 @@ import javax.swing.*;
 
 public class PopUpAjout {
     private Integer creneau_x = -1, creneau_y = -1;
+    public static boolean is_admin = false;
     public static JTextField champ_nom, champ_lieu;
-    public static JButton btn_valide2;
+    public static JButton btn_valide2, btn_supprime;
     //public static JPanel popup_panel = new JPanel();
     public static JFrame popup;
 
-    public PopUpAjout(int i, int j){
+    public PopUpAjout(int i, int j, boolean admin){
         this.creneau_x = i;
         this.creneau_y = j;
+        is_admin = admin;
         popup = new JFrame("Nouvel Evenement");
         popup.setSize(300, 400);
         popup.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
@@ -44,8 +46,18 @@ public class PopUpAjout {
 
         //Ajout du Bouton de validation du formulaire
         btn_valide2 = new JButton("Valider");
-        btn_valide2.setBounds(50, 300, 200, 25);
+        btn_valide2.setBounds(50, 270, 200, 25);
         btn_valide2.addActionListener(controleur);
+
+        //Ajout du Bouton de suppression
+        btn_supprime = new JButton("Supprimer");
+        btn_supprime.setBounds(50, 300, 200, 25);
+        btn_supprime.addActionListener(controleur);
+
+        if(! is_admin){
+            btn_supprime.setEnabled(false);
+        }
+
             
         //Affichage du nom
         JLabel texte_jour = new JLabel();
@@ -69,6 +81,7 @@ public class PopUpAjout {
         champ_lieu.setBounds(150, 50, 125, 20);
         champ_lieu.setFont(font2);
 
+        popup_panel.add(btn_supprime);
         popup_panel.add(btn_valide2);
         popup_panel.add(texte_jour);
         popup_panel.add(champ_nom);

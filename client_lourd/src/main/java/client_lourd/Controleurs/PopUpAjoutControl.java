@@ -35,5 +35,12 @@ public class PopUpAjoutControl implements ActionListener{
                 PopUpAjout.popup.dispose();
             }
         }
+        if(e.getSource() == PopUpAjout.btn_supprime){
+            PlanningUser.planning[this.creneau_x][this.creneau_y].setBackground(Color.DARK_GRAY);
+            PlanningUser.planning[this.creneau_x][this.creneau_y].setText("");
+            Fenetre.frame.repaint();
+            PopUpAjout.popup.dispose();
+        
+        }
     }
 }

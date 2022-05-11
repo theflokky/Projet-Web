@@ -23,11 +23,9 @@ public class PlanningUserControl implements ActionListener{
         }
 
         for(int i=0; i<7; i++){
-            for(int j=0; j<24; j++){
+            for(int j=0; j<10; j++){
                 if(e.getSource() == PlanningUser.planning[i][j]){
-                    if(PlanningUser.planning[i][j].getText().equals("")){
-                        new PopUpAjout(i, j);
-                    }
+                        new PopUpAjout(i, j, false);
                 }
 
             }

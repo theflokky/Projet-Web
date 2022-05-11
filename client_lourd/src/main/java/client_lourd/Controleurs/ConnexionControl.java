@@ -11,6 +11,7 @@ public class ConnexionControl implements ActionListener{
     public static String pseudo;
     public static String mdp;
     private boolean utilisateur_existe = false;
+    public boolean admin = true;
 
 
     //Constructeur
@@ -34,10 +35,19 @@ public class ConnexionControl implements ActionListener{
             utilisateur_existe = true;
 
             if(utilisateur_existe){
+                if(admin){
+                Fenetre.num_page = 5;
+                Fenetre.cartes.removeAll();
+                Fenetre.frame.add(Fenetre.createMainPanel());
+                Fenetre.frame.repaint();
+
+                }
+            else{
                 Fenetre.num_page = 4;
                 Fenetre.cartes.removeAll();
                 Fenetre.frame.add(Fenetre.createMainPanel());
                 Fenetre.frame.repaint();
+            }
             }
         }
 
