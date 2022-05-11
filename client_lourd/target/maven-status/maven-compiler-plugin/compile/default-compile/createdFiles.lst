@@ -1,5 +1,6 @@
 client_lourd/Controleurs/ConnexionControl.class
 client_lourd/Controleurs/PlanningAdminControl.class
+client_lourd/Modeles/EcrireData.class
 client_lourd/Vues/Fenetre.class
 client_lourd/Vues/PlanningUser.class
 client_lourd/Controleurs/PlanningUserControl.class
@@ -13,3 +14,4 @@ client_lourd/Vues/PopUpAjout.class
 client_lourd/Vues/PlanningAdmin.class
 client_lourd/Vues/Connexion.class
 client_lourd/Main.class
+client_lourd/Modeles/RecupData.class

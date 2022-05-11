@@ -11,7 +11,22 @@ public class ConnexionControl implements ActionListener{
     public static String pseudo;
     public static String mdp;
     private boolean utilisateur_existe = false;
-    public boolean admin = true;
+    public boolean admin = false;
+
+    private static String[][] init_table_user(){
+        String[][] table = new String[3][1000];
+
+
+        for(int i= 0; i < 3; i++){
+            for(int j=0; j<1000; j++){
+                table[i][j] = new String("");
+            }
+        }
+        return table;
+    }
+
+
+    public static String[][] table_user = init_table_user();
 
 
     //Constructeur
@@ -28,26 +43,37 @@ public class ConnexionControl implements ActionListener{
             pseudo = Connexion.champ_pseudo.getText();
             client_lourd.Vues.PlanningUser.pseudo = pseudo;
             mdp = String.valueOf(Connexion.champ_mdp.getPassword());
-            System.out.println("Pseudo : " + pseudo);
-            System.out.println("Mot de Passe : " + mdp);
-
-            //VERIFIER BDD
-            utilisateur_existe = true;
-
-            if(utilisateur_existe){
-                if(admin){
-                Fenetre.num_page = 5;
-                Fenetre.cartes.removeAll();
-                Fenetre.frame.add(Fenetre.createMainPanel());
-                Fenetre.frame.repaint();
-
-                }
+            
+            if(pseudo.isEmpty() || mdp.isEmpty()){}
             else{
-                Fenetre.num_page = 4;
-                Fenetre.cartes.removeAll();
-                Fenetre.frame.add(Fenetre.createMainPanel());
-                Fenetre.frame.repaint();
-            }
+                System.out.println("Pseudo : " + pseudo);
+                System.out.println("Mot de Passe : " + mdp);
+
+                //VERIFIER BDD
+                for(int i = 0; i < 1000; i++){
+                    if(table_user[0][i].equals(pseudo) && table_user[1][i].equals(mdp)){
+                        utilisateur_existe = true;
+                    }
+                    if(table_user[2][i].equals("Utilisateur")){
+                        admin = false;
+                    }
+                }
+
+                if(utilisateur_existe){
+                    if(admin){
+                    Fenetre.num_page = 5;
+                    Fenetre.cartes.removeAll();
+                    Fenetre.frame.add(Fenetre.createMainPanel());
+                    Fenetre.frame.repaint();
+
+                    }
+                    else{
+                        Fenetre.num_page = 4;
+                        Fenetre.cartes.removeAll();
+                        Fenetre.frame.add(Fenetre.createMainPanel());
+                        Fenetre.frame.repaint();
+                    }
+                }
             }
         }
 
