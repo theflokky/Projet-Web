@@ -31,7 +31,7 @@ public class ServPlan extends HttpServlet {
 /*		
 		
 		try {
-			new Planning() // à faire
+			// à faire: requete SQL à Planning()
 		} catch (Exception e) {
 			session.setAttribute("err", 1);
 		}
@@ -52,7 +52,7 @@ public class ServPlan extends HttpServlet {
 		HttpSession session = request.getSession();
 		
 		try {
-      // à faire
+      			// à faire
 			session.setAttribute("edt", edt);
 		} catch (Exception e) {
 			session.setAttribute("err", 1);
