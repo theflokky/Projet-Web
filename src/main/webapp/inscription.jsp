@@ -1,6 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-    <%@ page errorPage="../erreur.jsp" %>
     <%@ taglib prefix="c" uri="http://java.sun.com/jstl/core" %>
 <!DOCTYPE html>
 <html>
@@ -11,11 +10,11 @@
 </head>
 <body>
 
-<c:import url="header.html" />
+<c:import url="header.jsp" />
 
 <div class="login-box">
     <h2>Inscription</h2>
-	<form action ="http://localhost:8080/projet_web2/index.jsp" name ="inscription" method="get" id="form" >
+	<form action ="<%=request.getContextPath()%>/UtilisateurServlet" name ="inscription" method="post" id="form" >
       <div class="user-box">
       
       <input type="text" name="pseudo" id="pseudo" pattern="\w*" title="Les caractères spéciaux sauf '_' ne sont pas acceptés" required>
@@ -45,7 +44,7 @@
        <a class="alt_co" href="http://localhost:8080/Connexion.jsp">Vous avez déja un compte ?</a>
        </div>
        
-  <c:import url="footer.html" />
+  <c:import url="footer.jsp" />
 </body>
 <script type="text/javascript" src="script/projet.js"></script>
 
