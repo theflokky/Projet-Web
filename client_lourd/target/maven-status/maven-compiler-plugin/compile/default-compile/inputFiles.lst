@@ -1,12 +1,14 @@
 /home/flokky/fac/Projet-Web/client_lourd/src/main/java/client_lourd/Controleurs/ConnexionControl.java
+/home/flokky/fac/Projet-Web/client_lourd/src/main/java/client_lourd/Controleurs/PopUpControl.java
 /home/flokky/fac/Projet-Web/client_lourd/src/main/java/client_lourd/Vues/Accueil.java
 /home/flokky/fac/Projet-Web/client_lourd/src/main/java/client_lourd/Vues/Connexion.java
 /home/flokky/fac/Projet-Web/client_lourd/src/main/java/client_lourd/Vues/PlanningAdmin.java
 /home/flokky/fac/Projet-Web/client_lourd/src/main/java/client_lourd/Vues/Inscription.java
+/home/flokky/fac/Projet-Web/client_lourd/src/main/java/client_lourd/Vues/Fenetre.java
+/home/flokky/fac/Projet-Web/client_lourd/src/main/java/client_lourd/Controleurs/InscriptionControl.java
+/home/flokky/fac/Projet-Web/client_lourd/src/main/java/client_lourd/Controleurs/AccueilControl.java
 /home/flokky/fac/Projet-Web/client_lourd/src/main/java/client_lourd/Vues/PlanningUser.java
 /home/flokky/fac/Projet-Web/client_lourd/src/main/java/client_lourd/Controleurs/PlanningUserControl.java
 /home/flokky/fac/Projet-Web/client_lourd/src/main/java/client_lourd/Controleurs/PlanningAdminControl.java
-/home/flokky/fac/Projet-Web/client_lourd/src/main/java/client_lourd/Vues/Fenetre.java
-/home/flokky/fac/Projet-Web/client_lourd/src/main/java/client_lourd/Controleurs/InscriptionControl.java
+/home/flokky/fac/Projet-Web/client_lourd/src/main/java/client_lourd/Vues/PopUp.java
 /home/flokky/fac/Projet-Web/client_lourd/src/main/java/client_lourd/Main.java
-/home/flokky/fac/Projet-Web/client_lourd/src/main/java/client_lourd/Controleurs/AccueilControl.java

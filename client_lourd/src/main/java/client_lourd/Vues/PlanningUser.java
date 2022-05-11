@@ -8,58 +8,9 @@ import javax.swing.*;
 
 public class PlanningUser{
     //VARIABLES
-    private PlanningUserControl controleur;
     public static JButton btn_deco, btn_ajout;
     public static String pseudo;
     public static JButton[][] planning = new JButton[7][24];
-    public static JTextField champ_jour, champ_lieu;
-    
-
-    public static JPanel createPanelPopup(){
-        JPanel popup_panel = new JPanel();
-
-        popup_panel.setLayout(null);
-        popup_panel.setBackground(Color.BLACK);
-            
-        //Affichage du nom
-        JLabel texte_jour = new JLabel();
-        Font font1 = new Font("Arial",Font.PLAIN,15);
-        texte_jour.setFont(font1);
-        texte_jour.setBounds(20, 20, 100, 20);
-        texte_jour.setText("Nom :");
-        texte_jour.setForeground(Color.RED);
-        Font font2 = new Font("Arial",Font.PLAIN,15);
-        champ_jour = new JTextField();
-        champ_jour.setBounds(150, 20, 125, 20);
-        champ_jour.setFont(font2);
-
-        //Ajout du Lieu
-        JLabel texte_lieu = new JLabel();
-        texte_lieu.setFont(font1);
-        texte_lieu.setBounds(20, 50, 100, 20);
-        texte_lieu.setText("Salle :");
-        texte_lieu.setForeground(Color.RED);
-        champ_lieu = new JTextField();
-        champ_lieu.setBounds(150, 50, 125, 20);
-        champ_lieu.setFont(font2);
-
-        popup_panel.add(texte_jour);
-        popup_panel.add(champ_jour);
-        popup_panel.add(texte_lieu);
-        popup_panel.add(champ_lieu);
-
-        return popup_panel;
-    }
-
-    public static void popupAjout(){
-        JFrame popup = new JFrame("Nouvel Evenement");
-        popup.setSize(300, 400);
-        popup.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
-        popup.add(createPanelPopup());
-
-        popup.setResizable(false);
-        popup.setVisible(true);
-    }
 
     //Fonction d'affichage de la page
     public static void affichePlanningUser(JPanel cartes){
@@ -104,21 +55,21 @@ public class PlanningUser{
         Integer i, j;
         Integer x = 95;
         Integer y = 30;
-        Integer h1 = 0;
-        Integer h2 = 1;
+        Integer h1 = 8;
+        Integer h2 = 9;
 
         for(i= 0; i < 7; i++){
-            for(j=0; j<24; j++){
+            for(j=0; j<10; j++){
                 JButton cellule = new JButton();
                 planning[i][j]=cellule;
-                cellule.setBounds(x, y, 150, 26);
+                cellule.setBounds(x, y, 150, 50);
                 cellule.setBackground(Color.DARK_GRAY);
                 cellule.setForeground(Color.LIGHT_GRAY);
                 cellule.addActionListener(controleur);
                 cartes.add(cellule);
                 
 
-                y=y+27;
+                y=y+51;
             }
             y=30;
             x=x+151;
@@ -126,9 +77,9 @@ public class PlanningUser{
 
         y=30;
 
-        for(j=0; j<24; j++){
+        for(j=0; j<10; j++){
             JLabel plage_horaire = new JLabel();
-            plage_horaire.setBounds(10, y, 100, 26);
+            plage_horaire.setBounds(10, y, 100, 50);
             plage_horaire.setText(h1 +"h - "+ h2 + "h");
             plage_horaire.setForeground(Color.RED);
             cartes.add(plage_horaire);
@@ -136,7 +87,7 @@ public class PlanningUser{
             h1+=1;
             h2+=1;
 
-            y=y+27;
+            y=y+51;
         }
 
         x=135;
