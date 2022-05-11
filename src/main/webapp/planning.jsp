@@ -19,7 +19,7 @@
 </head>
 <body>
 	<button onclick="window.history.back();"><img src="img/retourne.jpg" /></button>
-	<form style="float:right" action="Chat" method="post"><input type="submit" name="chat" value="chat" /></form>
+	<a href="chat.jsp" style="float:right; padding:10px; text-decoration:none; border: 1px solid blue">Chat</a>
 	<h3>BIENVENUE</h3>	
 
 	<% Planning ent = (Planning) session.getAttribute("edt"); %>
