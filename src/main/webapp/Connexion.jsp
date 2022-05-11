@@ -16,7 +16,8 @@
 <div class="login-box">
     <h1 style="color:red">Connexion</h1><br><br>
     
-    <form action ="/ServPlan" id ="form" method="post" name="connexion">
+    <!-- form action ="/ServPlan" id ="form" method="post" name="connexion" -->
+<form action ="planning.jsp" id ="form" method="post" name="connexion">
    	<div class="user-box">
    		<label for="pseudo">PSEUDO&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
     	<input type="text" name="pseudo" id="pseudo" pattern="\w*" title="Les caractères spéciaux sauf '_' ne sont pas acceptés" value="" required>
