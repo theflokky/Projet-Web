@@ -53,7 +53,7 @@ li a, .dropbtn {
   display: inline-block;
   color: white;
   text-align: center;
-  padding: 5px 5px;
+  padding: 5px;
   text-decoration: none;
 }
 
@@ -90,6 +90,10 @@ li.dropdown {
 .dropdown-content a:hover {background-color: #f1f1f1}
 
 .show {display:block;}
+
+nav{
+	background-image: url('img/accueil.jpg');
+}
 </style>
 	</head>
 	<body>
