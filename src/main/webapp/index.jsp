@@ -12,10 +12,10 @@
     <link rel="stylesheet" href="script/projet.css">
     <script type="text/javascript" src="style/projet.js"></script>
   </head>
-<body>
+<body style="background-image: url('img/main.jpg'); background-size: cover;">
 
 	<jsp:include page="header.jsp"></jsp:include>
-
+<div style="background-image: url('img/background.jpg'); background-size: cover;">
 	<% String Id_user = (String) session.getAttribute("Id_user"); %>
 	<% ServletContext context = request.getSession().getServletContext(); %>
 	
@@ -26,11 +26,13 @@
 	  	
   	</c:if>
   	
-	<h1>BIENVENUE</h1>
-	<p style="float:right; padding-right: 60px; "><a href="Connexion.jsp" style="text-decoration:none;">Connecter</a></p>
-	<p>Bienvenu sur le site : Le site vous permet de .... !</p>
-	<p>Explication</p>
-	<p>Une messagerie  est également intégrée</p>
+	<h1 style="color:red; position: center;">BIENVENUE</h1>
+	<p style="float:right; padding: 10px; border: 1px solid black; background-color: white"><a href="Connexion.jsp" style="text-decoration:none;">Connecter</a></p>
+	<p style="color:yellow">
+	Bienvenu sur le site : Le site vous permet de .... !<br>
+	Explication<br>
+	Une messagerie  est également intégrée<br>
+	</p>
 	
 	<br><br><br>
 	<a style="padding: 30px" href="#"><img src="img/img1.jpg"/></a>
@@ -42,8 +44,9 @@
 	<a style="padding: 30px" href="#"><img src="img/img7.jpg"/></a>
 	<a style="padding: 30px" href="#"><img src="img/img8.jpg"/></a>
 	<a style="padding: 30px" href="#"><img src="img/img9.jpg"/></a>
+</div>
 
-	<jsp:include page="/footer.jsp" />
+	<jsp:include page="footer.jsp" />
       
   </body>
   
