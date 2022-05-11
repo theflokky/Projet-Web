@@ -6,11 +6,10 @@
 <head>
 <meta charset="UTF-8">
 <title>Inscription</title>
-<link rel="stylesheet" type="text/css" href="style/projet.css">
+    <link rel="stylesheet" href="script/projet.css">
+    <script type="text/javascript" src="style/projet.js"></script>
 </head>
 <body>
-
-<c:import url="header.jsp" />
 
 <div class="login-box">
     <h2>Inscription</h2>
@@ -44,8 +43,5 @@
        <a class="alt_co" href="http://localhost:8080/Connexion.jsp">Vous avez déja un compte ?</a>
        </div>
        
-  <c:import url="footer.jsp" />
 </body>
-<script type="text/javascript" src="script/projet.js"></script>
-
 </html>
