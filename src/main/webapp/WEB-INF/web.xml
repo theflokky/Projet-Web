@@ -15,10 +15,15 @@
     <servlet-name>ServChat</servlet-name>
     <servlet-class>projet_web2.ServChat</servlet-class>
   </servlet>
-    <servlet>
+  <servlet>
     <display-name>ServPlan</display-name>
     <servlet-name>ServPlan</servlet-name>
     <servlet-class>projet_web2.ServPlan</servlet-class>
+  </servlet>
+  <servlet>
+    <display-name>VeriConnexion</display-name>
+    <servlet-name>VeriConnexion</servlet-name>
+    <servlet-class>projet_web2.VeriConnexion</servlet-class>
   </servlet>
   
   <servlet-mapping>
@@ -33,6 +38,11 @@
     <servlet-name>ServPlan</servlet-name>
     <url-pattern>/ServPlan</url-pattern>
   </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>VeriConnexion</servlet-name>
+    <url-pattern>/VeriConnexion</url-pattern>
+  </servlet-mapping>
+  
   <servlet-mapping>
   	<servlet-name>default</servlet-name>
   	<url-pattern>*.css</url-pattern>
