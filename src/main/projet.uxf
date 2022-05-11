@@ -1,0 +1,450 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<diagram program="umlet" version="14.3.0">
+  <zoom_level>10</zoom_level>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>0</x>
+      <y>0</y>
+      <w>220</w>
+      <h>30</h>
+    </coordinates>
+    <panel_attributes>projet_web2::Utilisateur
+--
+-id: int
+-pseudo: String
+-est_admin: int
+-password: String
+-mail: String
+--
++Utilisateur(int id, String pseudo, String mail, int admin, String password): ctor
++Utilisateur(String pseudo, String mail, int admin, String password): ctor
++getMail(): String
++setMail(String mail): void
++getPassword(): String
++setPassword(String password): void
++getAdmin(): int
++setAdmin(int admin): void
++getPseudo(): String
++setPseudo(String pseudo): void
++getId(): int
++setId(int id): void
+--
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>280</x>
+      <y>80</y>
+      <w>210</w>
+      <h>30</h>
+    </coordinates>
+    <panel_attributes>projet_web2::Creneau
+--
+-jour: Date
+-debut: Time
+-fin: Time
+-cours: Cours
+--
++Creneau(): ctor
++Creneau(Date jour, Time debut, Time fin, Cours cours): ctor
++getDebut(): Time
++setDebut(Time debut): void
++getFin(): Time
++setFin(Time fin): void
++getCours(): Cours
++setCours(Cours cours): void
++getJour(): Date
++setJour(Date jour): void
+--
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>0</x>
+      <y>280</y>
+      <w>200</w>
+      <h>30</h>
+    </coordinates>
+    <panel_attributes>projet_web2::Connexion
+--
+-JDBC_DRIVER = "com.mysql.jdbc.Driver": String
+-JDBC_CONNEXION = "jdbc:mysql://localhost:4456/lj08048s": String
+-JDBC_USER = "lj08048s": String
+-JDBC_PWD = "0000": String
+~c: Connection
+-ts: Statement
+--
++Connexion(): ctor
++Authentification(Utilisateur user): boolean
++Inscription(Utilisateur user): boolean
++trouverId(String pseudo): int
++close(): void
+--
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>280</x>
+      <y>160</y>
+      <w>210</w>
+      <h>30</h>
+    </coordinates>
+    <panel_attributes>projet_web2::Cours
+--
+-nom_UE: String
+-salle: int
+--
++Cours(String nom_UE): ctor
++Cours(String nom_UE, int salle): ctor
++getNom_UE(): String
++setNom_UE(String nom_UE): void
++getSalle(): int
++setSalle(int salle): void
+--
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>550</x>
+      <y>0</y>
+      <w>210</w>
+      <h>30</h>
+    </coordinates>
+    <panel_attributes>projet_web2::Login
+--
+-serialVersionUID = 1L: long
+-username: String
+-password: String
+--
++getpseudo(): String
++setUsername(String username): void
++getPassword(): String
++setPassword(String password): void
+--
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>280</x>
+      <y>0</y>
+      <w>210</w>
+      <h>30</h>
+    </coordinates>
+    <panel_attributes>projet_web2::Planning
+--
+-u: Utilisateur
+-edt: ArrayList&lt;Creneau&gt;
+--
++Planning(Utilisateur user): ctor
++getU(): Utilisateur
++setU(Utilisateur user): void
++getEdt(): ArrayList&lt;Creneau&gt;
++addCreneau(Creneau cre): void
+--
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>550</x>
+      <y>80</y>
+      <w>210</w>
+      <h>30</h>
+    </coordinates>
+    <panel_attributes>projet_web2::LoginServlet
+--
+-serialVersionUID = 1L: long
+-logindb: LoginDb
+--
++LoginServlet(): ctor
++init(): void
+#doGet(HttpServletRequest request, HttpServletResponse response): void
+#doPost(HttpServletRequest request, HttpServletResponse response): void
+--
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>0</x>
+      <y>80</y>
+      <w>220</w>
+      <h>30</h>
+    </coordinates>
+    <panel_attributes>projet_web2::UtilisateurServlet
+--
+-serialVersionUID = 1L: long
+-userdb = new UtilisateurDb(): UtilisateurDb
+--
++UtilisateurServlet(): ctor
+#doGet(HttpServletRequest request, HttpServletResponse response): void
+#doPost(HttpServletRequest request, HttpServletResponse response): void
+--
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>0</x>
+      <y>490</y>
+      <w>210</w>
+      <h>30</h>
+    </coordinates>
+    <panel_attributes>projet_web2::Inscription
+--
+-serialVersionUID = 1L: long
+--
++Inscription(): ctor
+#doGet(HttpServletRequest request, HttpServletResponse response): void
+#doPost(HttpServletRequest request, HttpServletResponse response): void
+--
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>680</x>
+      <y>240</y>
+      <w>220</w>
+      <h>30</h>
+    </coordinates>
+    <panel_attributes>projet_web2::ServPlan
+--
+-serialVersionUID = 1L: long
+--
++ServPlan(): ctor
+#doGet(HttpServletRequest request, HttpServletResponse response): void
+#doPost(HttpServletRequest request, HttpServletResponse response): void
+--
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>0</x>
+      <y>380</y>
+      <w>210</w>
+      <h>30</h>
+    </coordinates>
+    <panel_attributes>projet_web2::Deconnexion
+--
+-serialVersionUID = 1L: long
+--
++Deconnexion(): ctor
+#doGet(HttpServletRequest request, HttpServletResponse reponse): void
+--
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>0</x>
+      <y>160</y>
+      <w>220</w>
+      <h>30</h>
+    </coordinates>
+    <panel_attributes>projet_web2::UtilisateurDb
+--
++ID_USER = 2: int
+--
++inscription_user(Utilisateur user): int
+-printSQLException(SQLException ex): void
+--
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>550</x>
+      <y>160</y>
+      <w>210</w>
+      <h>30</h>
+    </coordinates>
+    <panel_attributes>projet_web2::LoginDb
+--
+--
++validate(Login login): boolean
+-printSQLException(SQLException ex): void
+--
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>850</x>
+      <y>0</y>
+      <w>190</w>
+      <h>30</h>
+    </coordinates>
+    <panel_attributes>projet_web2::SelectTable
+--
+~Lcours: List&lt;List&lt;Object&gt;&gt;
+--
++main(String args[]): void
+--
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>380</x>
+      <y>100</y>
+      <w>30</w>
+      <h>80</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;.</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;60.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>380</x>
+      <y>20</y>
+      <w>30</w>
+      <h>80</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;.</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;60.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLUseCase</id>
+    <coordinates>
+      <x>0</x>
+      <y>560</y>
+      <w>120</w>
+      <h>40</h>
+    </coordinates>
+    <panel_attributes>web.xml</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLUseCase</id>
+    <coordinates>
+      <x>280</x>
+      <y>370</y>
+      <w>120</w>
+      <h>40</h>
+    </coordinates>
+    <panel_attributes>index.jsp</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLUseCase</id>
+    <coordinates>
+      <x>510</x>
+      <y>370</y>
+      <w>120</w>
+      <h>50</h>
+    </coordinates>
+    <panel_attributes>Connexion.jsp</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLUseCase</id>
+    <coordinates>
+      <x>500</x>
+      <y>520</y>
+      <w>120</w>
+      <h>40</h>
+    </coordinates>
+    <panel_attributes>inscription.jsp</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLUseCase</id>
+    <coordinates>
+      <x>870</x>
+      <y>380</y>
+      <w>120</w>
+      <h>40</h>
+    </coordinates>
+    <panel_attributes>planning.jsp</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLUseCase</id>
+    <coordinates>
+      <x>860</x>
+      <y>520</y>
+      <w>120</w>
+      <h>40</h>
+    </coordinates>
+    <panel_attributes>chat.jsp</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>390</x>
+      <y>380</y>
+      <w>140</w>
+      <h>30</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;-</panel_attributes>
+    <additional_attributes>120.0;10.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>620</x>
+      <y>260</y>
+      <w>80</w>
+      <h>150</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;-</panel_attributes>
+    <additional_attributes>60.0;10.0;10.0;130.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>550</x>
+      <y>410</y>
+      <w>30</w>
+      <h>130</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;110.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>890</x>
+      <y>260</y>
+      <w>60</w>
+      <h>140</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;-</panel_attributes>
+    <additional_attributes>40.0;120.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>910</x>
+      <y>410</y>
+      <w>30</w>
+      <h>130</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;110.0;10.0;10.0</additional_attributes>
+  </element>
+</diagram>
