@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<%@ page import="projet_web2.Planning"%>
+<%@page import="projet_web2.Planning"%> 
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <!--
 <%@ page import="java.io.*,java.util.*,java.sql.*"%>
@@ -13,13 +13,13 @@
 <html>
 <head>
     <meta charset="UTF-8">
-    <title>ADE</title>
+    <title>Planning</title>
     <link rel="stylesheet" href="style/projet.css">
     <script type="text/javascript" src="script/projet.js"></script>
 </head>
 <body>
 	<button onclick="window.history.back();"><img src="img/retourne.jpg" /></button>
-	<form style="float:right" action="Chat" method="post"><input type="submit" name="messagerie" value="messagerie" /></form>
+	<form style="float:right" action="Chat" method="post"><input type="submit" name="chat" value="chat" /></form>
 	<h3>BIENVENUE</h3>	
 
 	<% Planning ent = (Planning) session.getAttribute("edt"); %>
@@ -38,6 +38,7 @@
 			</tr>
 		</c:forEach>
 	</table>
+
 <!-- Table utilise jstl/sql
 	<table>
 		<tr><td colspan="8"><strong>EMPLOI DU TEMPS</strong></td></tr>
@@ -72,7 +73,6 @@
 				ORDER BY date, timebeg , timeend
 			);
 		</sql:query>
-
 		<c:forEach var="row" items="${result.rows}">
 			<tr>
 				<td><c:out value="${date}"/></td>
@@ -87,6 +87,5 @@
 		</c:forEach>
 	</table>
 -->
-</body>
 </body>
 </html>
