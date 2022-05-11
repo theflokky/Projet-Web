@@ -14,7 +14,7 @@ public class Main{
 
     //Main
     public static void main(String [] args) throws SQLException, IOException, ClassNotFoundException{
-        //client_lourd.Modeles.ConnexionBDD.bddConnexion();
+        client_lourd.Modeles.ConnexionBDD.bddConnexion();
         f = new Fenetre();
         
     }

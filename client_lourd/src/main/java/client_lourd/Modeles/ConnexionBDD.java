@@ -5,8 +5,8 @@ import java.io.*;
 
 public class ConnexionBDD {
     public static void bddConnexion() throws SQLException, ClassNotFoundException, IOException{
-        //Connexion a la BDD A COMPLETER QUAND BDD OP
-        Connection connexion = DriverManager.getConnection("jdbc:mysql://127.0.0.1:8080/basededonnees", "user", "passwd");
+        //Connexion a la BDD
+        Connection connexion = DriverManager.getConnection("jdbc:mysql://localhost/chomeur", "flokky", "giroud");
         
         if (connexion != null) {
             System.out.println("[BDD] Connexion a la Base de Données Réussie");
@@ -15,5 +15,7 @@ public class ConnexionBDD {
             System.out.println("[BDD] Echec de la Connexion a la Base de Données");
             System.exit(0);
         }
+
+        connexion.close();
     }
 }
